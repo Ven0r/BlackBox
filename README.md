@@ -16,14 +16,14 @@ nmap
 
 
 # Asset ++
-1.Nuclei
-2.DNSGen
-3. Katana
-4. Httpx
+  1.Nuclei
+  2.DNSGen
+  3. Katana
+  4. Httpx
 
 # Content Discovery
-1.fuff
-2.Meg
+  1.fuff
+  2.Meg
 
 # Other
-1. SecLists
+  1. SecLists
