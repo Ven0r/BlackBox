@@ -1,10 +1,10 @@
 # **BlackBox** ![alt text](https://emoji.gg/assets/emoji/6084_hackerman.png "Hackerman")
 ## To Install:
-<blockquote>
+
 `$ git clone https://github.com/Ven0r/BlackBox.git `  
 `$ cd BlackBox `  
 `$ sudo ./setup.sh`   
-</blockquote>
+
 ## *OS bin/* 
 1. zsh  
 2. ohmyzsh-bira  
