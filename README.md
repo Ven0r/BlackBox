@@ -15,8 +15,6 @@ git
 go  
 nmap  
  
- https://emoji.gg/assets/emoji/6084_hackerman.png
-
 ## Asset Discovery
   1. subfinder
   2. amass
