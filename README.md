@@ -4,8 +4,7 @@
   <img align="right" alt="Hackerman" src="https://emoji.gg/assets/emoji/6084_hackerman.png">
 </picture>
 
-# **BlackBox**
-==============
+# **BlackBox** ![alt text](https://emoji.gg/assets/emoji/6084_hackerman.png "Hackerman")
 ## To Install:
 
 ## *OS bin/* 
