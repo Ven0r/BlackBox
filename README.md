@@ -35,9 +35,9 @@
   5. Gau
   6. Unfurl
 
-# Content Discovery
+#### Content Discovery
   1. fuff
   2. Meg
 
-# Other
+#### Other
   1. SecLists
