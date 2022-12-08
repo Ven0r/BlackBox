@@ -9,8 +9,10 @@ go
 nmap
 
 # Asset Discovery
-1. SubFinder
-2. amass
+  1. SubFinder
+  2. amass
+  3. asnmap
+  4. tlsx
 
 
 # Asset ++
