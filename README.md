@@ -5,15 +5,15 @@
 </picture>
 
 # BlackBox
-## ToInstall:
+## toInstall:
 
-#### OS BIN
- zsh  
- ohmyzsh-bira  
- neovim  
- git  
- go  
- nmap  
+#### OS bin/  
+zsh  
+ohmyzsh-bira  
+neovim  
+git  
+go  
+nmap  
  
  https://emoji.gg/assets/emoji/6084_hackerman.png
 
