@@ -1,5 +1,6 @@
 # **BlackBox** ![alt text](https://emoji.gg/assets/emoji/6084_hackerman.png "Hackerman")
 ## To Install:
+git clone 
 
 ## *OS bin/* 
 1. zsh  
