@@ -1,6 +1,6 @@
 # BlackBox
 
-#ToDo:
+# ToDo:
 zsh
 ohmyzsh-bira
 neovim
@@ -8,18 +8,18 @@ git
 go
 nmap
 
-#Asset Discovery
+# Asset Discovery
 1. SubFinder
 2. amass
 
 
-#Asset ++
+# Asset ++
 1.Nuclei
 2.DNSGen
 3. Katana
 4. Httpx
 
-Content Discovery
+# Content Discovery
 1.fuff
 2.Meg
 
