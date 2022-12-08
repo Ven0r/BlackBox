@@ -3,7 +3,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://emoji.gg/assets/emoji/6084_hackerman.png">
   <source media="(prefers-color-scheme: light)" srcset="https://emoji.gg/assets/emoji/6084_hackerman.png">
-  <img alt="Hackerman" src="https://emoji.gg/assets/emoji/6084_hackerman.png">
+  <img align="right" alt="Hackerman" src="https://emoji.gg/assets/emoji/6084_hackerman.png">
 </picture>
 
 ## ToInstall:
