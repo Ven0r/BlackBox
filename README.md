@@ -1,4 +1,4 @@
-# **BlackBox** ![alt text](https://emoji.gg/assets/emoji/6084_hackerman.png "Hackerman")
+# **BlackBox**     ![alt text](https://emoji.gg/assets/emoji/6084_hackerman.png "Hackerman")
 ## To Install:
 
 `$ git clone https://github.com/Ven0r/BlackBox.git `  
