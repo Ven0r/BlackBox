@@ -7,7 +7,7 @@
 # **BlackBox**
 ## To Install:
 
-## OS bin/  
+## *OS bin/* 
 zsh  
 ohmyzsh-bira  
 neovim  
@@ -15,7 +15,7 @@ git
 go  
 nmap  
  
-## Asset Discovery
+## *Asset Discovery*
   1. subfinder
   2. amass
   3. asnmap
@@ -23,7 +23,7 @@ nmap
   5. dnsx
 
 
-## Asset ++
+## *Asset ++*
   1. nuclei
   2. DNSGen
   3. katana
@@ -32,9 +32,9 @@ nmap
   5. gau
   6. unfurl
 
-## Content Discovery
+## *Content Discovery*
   1. fuff
   2. meg
 
-## Other
+## *Other*
   1. seclists
