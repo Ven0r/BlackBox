@@ -2,12 +2,12 @@
 ## To Install:
 
 ## *OS bin/* 
-  zsh  
-  ohmyzsh-bira  
-  neovim  
-  git  
-  go  
-  nmap  
+1. zsh  
+2. ohmyzsh-bira  
+3. neovim  
+4. git  
+5. go  
+6. nmap  
  
 ## *Asset Discovery*
 1. subfinder
