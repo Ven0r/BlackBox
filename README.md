@@ -1,6 +1,8 @@
 # **BlackBox** ![alt text](https://emoji.gg/assets/emoji/6084_hackerman.png "Hackerman")
 ## To Install:
-git clone 
+`git clone https://github.com/Ven0r/BlackBox.git`
+`sudo ./setup.sh`
+
 
 ## *OS bin/* 
 1. zsh  
