@@ -7,7 +7,7 @@
 # BlackBox
 ## toInstall:
 
-#### OS bin/  
+## OS bin/  
 zsh  
 ohmyzsh-bira  
 neovim  
@@ -17,26 +17,26 @@ nmap
  
  https://emoji.gg/assets/emoji/6084_hackerman.png
 
-#### Asset Discovery
-  1. SubFinder
+## Asset Discovery
+  1. subfinder
   2. amass
   3. asnmap
   4. tlsx
   5. dnsx
 
 
-#### Asset ++
-  1. Nuclei
+## Asset ++
+  1. nuclei
   2. DNSGen
-  3. Katana
-  4. Httpx  
+  3. katana
+  4. httpx  
     - http://example.com | httpx --title --asn --cname --sc --ct --location | tee -a file.txt
-  5. Gau
-  6. Unfurl
+  5. gau
+  6. unfurl
 
-#### Content Discovery
+## Content Discovery
   1. fuff
-  2. Meg
+  2. meg
 
-#### Other
-  1. SecLists
+## Other
+  1. seclists
