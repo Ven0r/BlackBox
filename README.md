@@ -1,12 +1,12 @@
 # BlackBox
 
 # ToDo:
-zsh
-ohmyzsh-bira
-neovim
-git
-go
-nmap
+ zsh
+ ohmyzsh-bira
+ neovim
+ git
+ go
+ nmap
 
 # Asset Discovery
   1. SubFinder
