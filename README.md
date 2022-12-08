@@ -6,17 +6,19 @@
   <img alt="Hackerman" src="https://emoji.gg/assets/emoji/6084_hackerman.png">
 </picture>
 
-# ToDo:
- zsh
- ohmyzsh-bira
- neovim
- git
- go
- nmap
+## ToInstall:
+
+#### OS BIN
+ zsh  
+ ohmyzsh-bira  
+ neovim  
+ git  
+ go  
+ nmap  
  
  https://emoji.gg/assets/emoji/6084_hackerman.png
 
-# Asset Discovery
+#### Asset Discovery
   1. SubFinder
   2. amass
   3. asnmap
@@ -24,11 +26,11 @@
   5. dnsx
 
 
-# Asset ++
+#### Asset ++
   1. Nuclei
   2. DNSGen
   3. Katana
-  4. Httpx
+  4. Httpx  
     - http://example.com | httpx --title --asn --cname --sc --ct --location | tee -a file.txt
   5. Gau
   6. Unfurl
