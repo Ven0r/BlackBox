@@ -5,7 +5,7 @@
 </picture>
 
 # BlackBox
-## toInstall:
+## To Install:
 
 ## OS bin/  
 zsh  
