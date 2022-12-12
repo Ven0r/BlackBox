@@ -1,21 +1,16 @@
 #!/bin/bash
-
-sudo cp /etc/apt/sources.list /etc/apt/sources-list.bak
-sudo cp sources.list /etc/apt/
+echo "-------------------------------------------------------------------"
+echo "----- update, upgrade, and dist-upgrade complete, Next Phase ------"
+echo "-------------------------------------------------------------------"
 
 sudo apt update
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
 
-echo "-------------------------------------------------------------------"
-echo "----- update, upgrade, and dist-upgrade complete, Next Phase ------"
-echo "-------------------------------------------------------------------"
 cd ~
 wget https://dl.google.com/go/go1.13.3.linux-amd64.tar.gz
 tar -xvf go1.13.3.linux-amd64.tar.gz
 
-echo "-------------------------------------------------------------------"
-echo "----- Installing zsh, neovim, chrome, openvpn, +more Next Phase ---"
 echo "-------------------------------------------------------------------"
 
 sudo apt install glances zsh neovim build-essential python3-setuptools hexedit exif qbittorrent snapd openvpn git jq -y
@@ -26,18 +21,24 @@ sudo systemctl start snapd
 snap install amass
 
 echo "-------------------------------------------------------------------"
-echo "----- Installing zsh, neovim, chrome, openvpn, +more Next Phase ---"
-echo "-------------------------------------------------------------------"
 
 cd
 mkdir tools
 cd tools 
 
-mkdir Lists
-cd Lists
+mkdir wordlists
+cd wordlists
 
+echo "-------------------------------------------------------------------"
+echo "------------------ Getting SecLists from Github  ------------------"
+echo "-------------------------------------------------------------------"
 wget https://gist.githubusercontent.com/jhaddix/86a06c5dc309d08580a018c66354a056/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt
 git clone https://github.com/danielmiessler/SecLists.git 
+
+
+echo "-------------------------------------------------------------------"
+echo "---------   Getting PayloadsalltheThings from Github  -------------"
+echo "-------------------------------------------------------------------"
 git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git 
 
 cd ..
@@ -50,19 +51,7 @@ git clone https://github.com/vortexau/dnsvalidator.git
 cd massdns
 make
 
-echo "-------------------------------------------------------------------"
-echo "------------------ Getting SecLists from Github  ------------------"
-echo "-------------------------------------------------------------------"
-
 cd ~/tools
-
-echo "-------------------------------------------------------------------"
-echo "---------   Getting PayloadsalltheThings from Github  -------------"
-echo "-------------------------------------------------------------------"
-
-echo "-------------------------------------------------------------------"
-echo "---------- Lots of cool software installed, Next Phase ------------"
-echo "-------------------------------------------------------------------"
 
 wget -q https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
 chmod +x install.sh
