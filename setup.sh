@@ -18,7 +18,7 @@ echo "-------------------------------------------------------------------"
 echo "----- Installing zsh, neovim, chrome, openvpn, +more Next Phase ---"
 echo "-------------------------------------------------------------------"
 
-sudo apt install glances zsh neovim build-essential python3-setuptools hexedit exif qbittorrent snapd openvpn git -y
+sudo apt install glances zsh neovim build-essential python3-setuptools hexedit exif qbittorrent snapd openvpn git jq -y
 
 sudo systemctl enable snapd
 sudo systemctl start snapd
