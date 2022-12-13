@@ -8,19 +8,13 @@ sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
 
 cd ~
-wget https://dl.google.com/go/go1.13.3.linux-amd64.tar.gz
-tar -xvf go1.13.3.linux-amd64.tar.gz
+wget https://dl.google.com/go/go1.19.4.linux-amd64.tar.gz
+tar -C /usr/local go1.19.4.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
 
 echo "-------------------------------------------------------------------"
 
-sudo apt install glances zsh neovim build-essential python3-setuptools hexedit exif qbittorrent snapd openvpn git jq -y
-
-sudo systemctl enable snapd
-sudo systemctl start snapd
-
-snap install amass
-
-echo "-------------------------------------------------------------------"
+sudo apt install glances zsh nmap neovim build-essential python3-setuptools hexedit exif qbittorrent snapd openvpn git jq -y
 
 cd
 mkdir tools
@@ -32,26 +26,20 @@ cd wordlists
 echo "-------------------------------------------------------------------"
 echo "------------------ Getting SecLists from Github  ------------------"
 echo "-------------------------------------------------------------------"
+
 wget https://gist.githubusercontent.com/jhaddix/86a06c5dc309d08580a018c66354a056/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt
 git clone https://github.com/danielmiessler/SecLists.git 
 
+cd ..
 
 echo "-------------------------------------------------------------------"
 echo "---------   Getting PayloadsalltheThings from Github  -------------"
 echo "-------------------------------------------------------------------"
 git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git 
 
-cd ..
+cd ~
+
 mkdir Targets
-
-git clone https://github.com/FortyNorthSecurity/EyeWitness.git
-git clone https://github.com/blechschmidt/massdns.git
-git clone https://github.com/vortexau/dnsvalidator.git
-
-cd massdns
-make
-
-cd ~/tools
 
 wget -q https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
 chmod +x install.sh
@@ -67,9 +55,7 @@ sed -i '4iexport PATH=$PATH:$HOME/.local/bin' $HOME/.zshrc
 #Change zsh theme
 sed -i -e 's/ZSH_THEME=.*/ZSH_THEME="bira"/g' $HOME/.zshrc
 
-#add alias in .zshrc
-echo -e 'alias lh="ls -lAh"\nalias la="ls -la"\nalias ll="ls -l"' >> $HOME/.zshrc
-echo -e 'alias g="git"\nalias vim="nvim"' >> $HOME/.zshrc
+# get .zshrc file
 
 rm install.sh
 chsh -s /usr/bin/zsh
