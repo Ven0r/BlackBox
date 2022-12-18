@@ -56,6 +56,7 @@ sed -i '4iexport PATH=$PATH:$HOME/.local/bin' $HOME/.zshrc
 sed -i -e 's/ZSH_THEME=.*/ZSH_THEME="bira"/g' $HOME/.zshrc
 
 # get .zshrc file
+wget https://raw.githubusercontent.com/Ven0r/OS-setup/master/.zshrc
 
 rm install.sh
 chsh -s /usr/bin/zsh
@@ -68,18 +69,14 @@ echo -e 'export GOPATH=$HOME' >> $HOME/.zshrc
 echo -e 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> $HOME/.zshrc
 echo -e 'export PATH=$PATH:/snap/bin' >> $HOME/.zshrc
 
-snap refresh
 echo "-------------------------------------------------------------------"
 echo "------------------- Installing Go Toolz ---------------------------"
 echo "-------------------------------------------------------------------"
 
-cp $HOME/OS-setup/install_scripts/configz/.zshrc $HOME/
-cp $HOME/OS-setup/install_scripts/configz/init.vim $HOME/.config/nvim/
-
 source ~/.zshrc
 
 go get -v github.com/projectdiscovery/subfinder/cmd/subfinder
-go get -v github.com/OJ/gobuster
+go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
 go get -v github.com/ffuf/ffuf
 
 sudo mv go /usr/local
