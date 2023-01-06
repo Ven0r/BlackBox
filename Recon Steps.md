@@ -1,6 +1,7 @@
-# **recon steps...**
+# **Recon Steps...**
 
 ## Get Scope
+  ..hackerone
 
 ## Subfinder Domains 
   subfinder -d domain.com -o output.txt
