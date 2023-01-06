@@ -1,28 +1,28 @@
 # **Recon Steps...**
 
 ## Get Scope
-  ..hackerone
+  ```..hackerone```
 
 ### Subfinder Domains 
-  subfinder -d domain.com -o output.txt
+  ```subfinder -d domain.com -o output.txt```
   
 ### Cat all subfinder results into one file
-  cat domain_1_output.txt domain_2_output.txt > alldomains.txt
+  ```cat domain_1_output.txt domain_2_output.txt > alldomains.txt```
   
 ### Httpx domains
-  cat alldomains.txt | httpx --title --asn --cname --sc --ct --location --fc 404 | tee -a alive_domains.txt 
+  ```cat alldomains.txt | httpx --title --asn --cname --sc --ct --location --fc 404 | tee -a alive_domains.txt``` 
   
 ### Remove duplicates for alive_domains.txt
-  sort alive_domains.txt | uniq > nodupes_alive_domains.txt
+  ```sort alive_domains.txt | uniq > nodupes_alive_domains.txt```
   
 
 # Brute-force subdomains
 https://github.com/vortexau/dnsvalidator
-create resolver list 25,50,100 resolvers
-thread 50-100 
+create resolver list 25,50,100 resolvers.
+thread 50-100. 
   
-take chosen resolver list and run it on amass
-amass enum -rf resolver.txt -max-dns-queries 15000 -w all.txt -d domain.com -o output.txt
+take chosen resolver list and run it on amass.
+```amass enum -rf resolver.txt -max-dns-queries 15000 -w all.txt -d domain.com -o output.txt```
 
 
 # Next steps 
