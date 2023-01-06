@@ -16,6 +16,15 @@
   sort alive_domains.txt | uniq > nodupes_alive_domains.txt
   
 
+# Brute-force subdomains
+  https://github.com/vortexau/dnsvalidator
+  create resolver list 25,50,100 resolvers
+  thread 50-100 
+  
+  take chosen resolver list and run it on amass
+  amass enum -rf resolver.txt -max-dns-queries 15000 -w all.txt -d domain.com -o output.txt
+
+
 # Next steps 
 1. Brute-force subdomains against list
 2. Screen capture nodupes_alive_domains.txt
