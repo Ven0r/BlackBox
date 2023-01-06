@@ -16,4 +16,6 @@
   sort alive_domains.txt | uniq > nodupes_alive_domains.txt
   
 
-# Next steps to screen capture nodupes_alive_domains.txt
+# Next steps 
+1. Brute-force subdomains agains list
+2. Screen capture nodupes_alive_domains.txt
