@@ -17,5 +17,5 @@
   
 
 # Next steps 
-1. Brute-force subdomains agains list
+1. Brute-force subdomains against list
 2. Screen capture nodupes_alive_domains.txt
