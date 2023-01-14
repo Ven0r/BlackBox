@@ -37,4 +37,5 @@
 ## *Other*
 1. seclists
 2. PayloadAllThings
-
+3. cupp
+4. username-anarchy
