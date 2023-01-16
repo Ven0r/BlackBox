@@ -1,10 +1,10 @@
 # **BlackBox** ![alt text](https://emoji.gg/assets/emoji/6084_hackerman.png "Hackerman")
 ## To Install:
-
-`$ git clone https://github.com/Ven0r/BlackBox.git `  
-`$ cd BlackBox `  
-`$ sudo ./setup.sh`   
-
+```
+git clone https://github.com/Ven0r/BlackBox.git  
+cd BlackBox  
+sudo ./setup.sh   
+```
 After reboot open neovim and run the command
 ```
 :PackerSync
