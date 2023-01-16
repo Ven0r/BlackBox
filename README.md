@@ -5,6 +5,11 @@
 `$ cd BlackBox `  
 `$ sudo ./setup.sh`   
 
+After reboot open neovim and run the command
+```
+:PackerSync
+```
+
 ## *OS bin/* 
 1. zsh  
 2. ohmyzsh-bira  
