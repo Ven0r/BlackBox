@@ -9,6 +9,13 @@ sudo apt-get dist-upgrade -y
 
 sudo apt install glances build-essential python3-setuptools hexedit exif qbittorrent jq cupp -y
 
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x nvim.appimage
+./nvim.appimage
+
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
 cd ~
 mkdir Tools
 
