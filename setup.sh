@@ -18,6 +18,12 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 cd ~
 mkdir Tools
+cd Tools
+git clone https://github.com/s0md3v/Decodify.git
+cd Decodify
+make install
+cd
+
 
 echo "-------------------------------------------------------------------"
 echo "------------------ Getting SecLists from Github  ------------------"
