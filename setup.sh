@@ -45,6 +45,8 @@ cd
 git config --global user.email "venor.stdout@gmail.com"
 git config --global user.name "Venor"
 
+git clone https://github.com/Ven0r/CheatSheets.git
+
 cd BlackBox
 cp -rf nvim/ ~/.config/
 
