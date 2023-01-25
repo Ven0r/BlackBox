@@ -40,14 +40,18 @@ mkdir Targets
 
 wget https://raw.githubusercontent.com/Ven0r/OS-setup/master/.zshrc
 
+cd
+
 git config --global user.email "venor.stdout@gmail.com"
 git config --global user.name "Venor"
 
+cd BlackBox
+cp -rf nvim/ ~/.config/
 
 go get -v github.com/projectdiscovery/subfinder/cmd/subfinder
 
 
-ssh-keygen -t rsa -b 4096 -N "" -C "venor@venor.com" -f $HOME/.ssh/venor -q
+ssh-keygen -t ed25519 -C "venor" -f $HOME/.ssh/venor -q
 #source bash-vim-setup.sh
 
 echo "Cleaning Up" &&
