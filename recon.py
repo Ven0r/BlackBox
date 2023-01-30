@@ -7,15 +7,19 @@ import subprocess
 
 # set target
 parser = argparse.ArgumentParser(description='This is a script to run recon against target urls')
-parser.add_argument('-t', metavar='TARGET',required=True, type=str,
-                   help='Set target domain "domain.com"')
+parser.add_argument('-t', metavar='TARGET',required=True, nargs='+', help='Set target domains "domain.com" you can chain with ,')
 args = parser.parse_args()
-target = args.t
+scope = args.t
 
 
 # run commands for each step of recon
 
 #subfinder
+#subfinder -d domain.com,domain2,domain3 -o output.txt
+result = subprocess.run(["subfinder", "-dL", scope], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+print(result.stdout.decode())
+
+
 
 # append to list file of urls to check
 
@@ -49,7 +53,6 @@ def is_program_installed(programs):
             print("### In order to run this program you must install " + program + " ##")
             exit()
     return installed_programs
-
 
 is_program_installed(check_programs_dict)
 
