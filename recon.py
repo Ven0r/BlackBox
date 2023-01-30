@@ -1,5 +1,4 @@
 import os
-import sys
 import argparse
 import subprocess
 
@@ -7,19 +6,21 @@ import subprocess
 
 # set target
 parser = argparse.ArgumentParser(description='This is a script to run recon against target urls')
-parser.add_argument('-t', metavar='TARGET',required=True, nargs='+', help='Set target domains "domain.com" you can chain with ,')
+parser.add_argument('-t', metavar='TARGET',required=True, nargs='+', help='Set target domains "domain1.com domain2.com')
 args = parser.parse_args()
 scope = args.t
+target = ','.join(scope)
 
+# create folders for target
+folder_name = scope[0]
+if not os.path.exists(folder_name):
+    os.makedirs(folder_name)
 
+os.chdir(folder_name)
 # run commands for each step of recon
-
 #subfinder
 #subfinder -d domain.com,domain2,domain3 -o output.txt
-result = subprocess.run(["subfinder", "-dL", scope], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-print(result.stdout.decode())
-
-
+result = subprocess.run(["subfinder", "-d", target, "-o", scope[0] + ".txt", "-v" ], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 # append to list file of urls to check
 
