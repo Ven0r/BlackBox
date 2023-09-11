@@ -3,7 +3,7 @@
 ```
 wget https://raw.githubusercontent.com/Ven0r/BlackBox/main/setup.sh
 chmod +x setup.sh
-sudo ./setup.sh
+./setup.sh
 
 ```
 After reboot change password and open neovim and run the command
