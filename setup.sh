@@ -7,7 +7,7 @@ sudo apt update
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
 
-sudo apt install glances fuse build-essential python3-setuptools hexedit golang exif qbittorrent jq cupp -y
+sudo apt install zsh glances fuse build-essential python3-setuptools hexedit golang exif qbittorrent jq cupp -y
 
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod u+x nvim.appimage
@@ -38,7 +38,7 @@ wget https://raw.githubusercontent.com/Ven0r/OS-setup/master/.zshrc
 echo "-------------------------------------------------------------------"
 echo "---------               Create User                   -------------"
 echo "-------------------------------------------------------------------"
-echo "toor" | sudo -S adduser --shell /usr/bin/zsh venor
+sudo adduser --shell /usr/bin/zsh venor --gecos "" && echo "venor:toor" | sudo chpasswd
 sudo usermod -aG sudo venor
 
 git config --global user.email "venor.stdout@gmail.com"
