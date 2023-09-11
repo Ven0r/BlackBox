@@ -13,28 +13,6 @@ curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod u+x nvim.appimage
 sudo mv nvim.appimage /usr/local/bin/nvim
 
-git clone https://github.com/LazyVim/starter ~/.config/nvim
-
-cd ~
-
-echo "-------------------------------------------------------------------"
-echo "------------------ Getting SecLists from Github  ------------------"
-echo "-------------------------------------------------------------------"
-
-git clone https://github.com/danielmiessler/SecLists.git
-cd SecLists
-wget https://gist.githubusercontent.com/jhaddix/86a06c5dc309d08580a018c66354a056/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt
-cd ~
-
-echo "-------------------------------------------------------------------"
-echo "---------   Getting PayloadsalltheThings from Github  -------------"
-echo "-------------------------------------------------------------------"
-git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git
-
-mkdir Targets
-
-wget https://raw.githubusercontent.com/Ven0r/OS-setup/master/.zshrc
-
 echo "-------------------------------------------------------------------"
 echo "---------               Create User                   -------------"
 echo "-------------------------------------------------------------------"
@@ -42,6 +20,7 @@ echo "-------------------------------------------------------------------"
 echo "creating venor"
 sudo useradd -m -s /usr/bin/zsh venor && echo "venor:toor" | sudo chpasswd
 sudo usermod -aG sudo venor
+sudo su - venor
 
 echo "setting git global for venor"
 git config --global user.email "venor.stdout@gmail.com"
@@ -59,6 +38,28 @@ export GOPATH=$HOME/go
 export GOROOT=/usr/lib/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+
+cd ~
+
+echo "-------------------------------------------------------------------"
+echo "------------------ Getting SecLists from Github  ------------------"
+echo "-------------------------------------------------------------------"
+
+git clone https://github.com/danielmiessler/SecLists.git
+cd SecLists
+wget https://gist.githubusercontent.com/jhaddix/86a06c5dc309d08580a018c66354a056/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt
+cd ~
+
+echo "-------------------------------------------------------------------"
+echo "---------   Getting PayloadsalltheThings from Github  -------------"
+echo "-------------------------------------------------------------------"
+
+git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git
+
+mkdir Targets
+
+wget https://raw.githubusercontent.com/Ven0r/OS-setup/master/.zshrc
 
 echo "Cleaning Up" &&
 	apt -f install &&
