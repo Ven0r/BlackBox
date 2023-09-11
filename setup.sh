@@ -20,6 +20,8 @@ echo "-------------------------------------------------------------------"
 echo "creating venor"
 sudo useradd -m -s /usr/bin/zsh venor && echo "venor:toor" | sudo chpasswd
 sudo usermod -aG sudo venor
+sudo touch /home/venor/.zshrc
+sudo chown venor:venor /home/venor/.zshrc
 sudo su - venor
 
 echo "setting git global for venor"
