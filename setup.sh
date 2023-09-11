@@ -10,7 +10,7 @@ sudo apt-get dist-upgrade -y
 sudo apt install zsh glances fuse build-essential python3-setuptools hexedit golang exif qbittorrent jq cupp -y
 
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod u+x nvim.appimage
+chmod +x nvim.appimage
 sudo mv nvim.appimage /usr/local/bin/nvim
 
 echo "-------------------------------------------------------------------"
