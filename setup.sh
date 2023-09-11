@@ -53,9 +53,7 @@ echo "change theme in ohmyzsh"
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="bira"/' ~/.zshrc
 
 echo "setup ssh key"
-ssh-keygen -t ed25519 -C "venor" -f $HOME/.ssh/venor -q
-
-git clone https://github.com/Ven0r/CheatSheets.git
+ssh-keygen -t ed25519 -C "venor" -f $HOME/.ssh/venor -q -N ""
 
 export GOPATH=$HOME/go
 export GOROOT=/usr/lib/go
