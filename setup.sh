@@ -38,8 +38,7 @@ wget https://raw.githubusercontent.com/Ven0r/OS-setup/master/.zshrc
 echo "-------------------------------------------------------------------"
 echo "---------               Create User                   -------------"
 echo "-------------------------------------------------------------------"
-sudo adduser --shell /usr/bin/zsh venor
-echo "toor" | sudo chpasswd
+echo "toor" | sudo -S adduser --shell /usr/bin/zsh venor
 sudo usermod -aG sudo venor
 
 git config --global user.email "venor.stdout@gmail.com"
