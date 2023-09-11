@@ -63,6 +63,16 @@ mkdir Targets
 
 wget https://raw.githubusercontent.com/Ven0r/OS-setup/master/.zshrc
 
+echo "-------------------------------------------------------------------"
+echo "---------             Install Subfinder               -------------"
+echo "-------------------------------------------------------------------"
+
+mkdir Tools
+cd Tools
+wget https://github.com/projectdiscovery/subfinder/releases/download/v2.4.8/subfinder_2.4.8_linux_amd64.tar.gz
+tar -xzvf subfinder_2.4.8_linux_amd64.tar.gz
+sudo mv subfinder /usr/local/bin/
+
 '
 
 echo "Cleaning Up" &&
@@ -76,4 +86,3 @@ echo "-------------------- System Clean, Rebooting ----------------------"
 echo "-------------------------------------------------------------------"
 
 sudo reboot
-
