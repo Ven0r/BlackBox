@@ -63,6 +63,8 @@ mkdir Targets
 
 wget https://raw.githubusercontent.com/Ven0r/OS-setup/master/.zshrc
 
+'
+
 echo "Cleaning Up" &&
 	apt -f install &&
 	apt -y autoremove &&
@@ -74,4 +76,4 @@ echo "-------------------- System Clean, Rebooting ----------------------"
 echo "-------------------------------------------------------------------"
 
 sudo reboot
-'
+
