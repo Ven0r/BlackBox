@@ -39,15 +39,20 @@ echo "-------------------------------------------------------------------"
 echo "---------               Create User                   -------------"
 echo "-------------------------------------------------------------------"
 
+echo "creating venor"
 sudo useradd -m -s /usr/bin/zsh venor && echo "venor:toor" | sudo chpasswd
 sudo usermod -aG sudo venor
 
+echo "setting git global for venor"
 git config --global user.email "venor.stdout@gmail.com"
 git config --global user.name "Venor"
 
+echo "grab ohmyzsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+echo "change theme in ohmyzsh"
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="bira"/' ~/.zshrc
 
+echo "setup ssh key"
 ssh-keygen -t ed25519 -C "venor" -f $HOME/.ssh/venor -q
 
 git clone https://github.com/Ven0r/CheatSheets.git
