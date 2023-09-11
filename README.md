@@ -2,10 +2,13 @@
 ## To Install:
 ```
 wget https://raw.githubusercontent.com/Ven0r/BlackBox/main/setup.sh
-sudo ./setup.sh   
+chmod +x setup.sh
+sudo ./setup.sh
+
 ```
-After reboot open neovim and run the command
+After reboot change password and open neovim and run the command
 ```
+passwd
 v
 ```
 
