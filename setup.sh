@@ -31,7 +31,7 @@ git config --global user.name "Venor"
 echo "grab ohmyzsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 echo "change theme in ohmyzsh"
-sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="bira"/' ~/.zshrc
+wget -O ~/.zshrc https://raw.githubusercontent.com/Ven0r/OS-setup/master/.zshrc
 
 echo "setup ssh key"
 ssh-keygen -t ed25519 -C "venor" -f $HOME/.ssh/venor -q -N ""
