@@ -44,6 +44,8 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 
+go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
+
 cd ~
 
 echo "-------------------------------------------------------------------"
