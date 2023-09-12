@@ -86,6 +86,7 @@ git clone https://github.com/vortexau/dnsvalidator.git
 cd dnsvalidator
 sudo python3 setup.py install
 dnsvalidator -tL https://public-dns.info/nameservers.txt -threads 20 -o resolvers.txt
+mv resolvers.txt ~
 cd ~
 
 '
