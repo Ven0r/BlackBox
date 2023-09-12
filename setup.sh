@@ -7,11 +7,13 @@ sudo apt update
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
 
-sudo apt install zsh glances fuse build-essential python3-setuptools hexedit golang exif qbittorrent jq cupp -y
+sudo apt install zsh glances fuse build-essential python3-setuptools hexedit exif qbittorrent jq cupp -y
 
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod +x nvim.appimage
 sudo mv nvim.appimage /usr/local/bin/nvim
+wget https://golang.org/dl/go1.17.linux-amd64.tar.gz
+sudo tar -xvf go1.21.1.linux-amd64.tar.gz -C /usr/local
 
 echo "-------------------------------------------------------------------"
 echo "---------               Create User                   -------------"
