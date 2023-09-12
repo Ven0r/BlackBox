@@ -7,7 +7,7 @@ sudo apt update
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
 
-sudo apt install zsh glances fuse build-essential python3-setuptools hexedit exif qbittorrent jq cupp -y
+sudo apt install zsh glances fuse build-essential python3-setuptools hexedit exif qbittorrent jq cupp libssl-dev libcurl4-openssl-dev -y
 
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod +x nvim.appimage
@@ -45,6 +45,7 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 
 go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
+go install -v github.com/owasp-amass/amass/v4/...@master
 
 cd ~
 
