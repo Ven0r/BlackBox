@@ -7,7 +7,7 @@ sudo apt update
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
 
-sudo apt install zsh glances fuse build-essential python3-setuptools hexedit exif qbittorrent jq cupp libssl-dev libcurl4-openssl-dev -y
+sudo apt install zsh glances npm fuse build-essential python3-setuptools hexedit exif qbittorrent jq cupp libssl-dev libcurl4-openssl-dev -y
 
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod +x nvim.appimage
