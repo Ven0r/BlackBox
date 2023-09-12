@@ -67,6 +67,7 @@ git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git
 mkdir Targets
 
 wget https://raw.githubusercontent.com/Ven0r/OS-setup/master/.zshrc
+go install github.com/OWASP/Amass/v3@latest
 
 echo "-------------------------------------------------------------------"
 echo "---------             Install Subfinder               -------------"
@@ -77,6 +78,15 @@ cd Tools
 wget https://github.com/projectdiscovery/subfinder/releases/download/v2.4.8/subfinder_2.4.8_linux_amd64.tar.gz
 tar -xzvf subfinder_2.4.8_linux_amd64.tar.gz
 sudo mv subfinder /usr/local/bin/
+
+cd ~
+mkdir Tools
+cd Tools
+git clone https://github.com/vortexau/dnsvalidator.git
+cd dnsvalidator
+sudo python3 setup.py install
+dnsvalidator -tL https://public-dns.info/nameservers.txt -threads 20 -o resolvers.txt
+cd ~
 
 '
 
