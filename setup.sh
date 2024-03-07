@@ -9,9 +9,6 @@ sudo apt-get dist-upgrade -y
 
 sudo apt install zsh glances npm fuse build-essential python3-setuptools hexedit exif qbittorrent jq cupp libssl-dev libcurl4-openssl-dev -y
 
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod +x nvim.appimage
-sudo mv nvim.appimage /usr/local/bin/nvim
 wget https://golang.org/dl/go1.21.7.linux-amd64.tar.gz
 sudo tar -xvf go1.21.7.linux-amd64.tar.gz -C /usr/local
 
@@ -42,10 +39,7 @@ export GOPATH=$HOME/go
 export GOROOT=/usr/lib/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-git clone https://github.com/LazyVim/starter ~/.config/nvim
-
 go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
-go install -v github.com/owasp-amass/amass/v4/...@master
 
 cd ~
 
@@ -75,9 +69,6 @@ echo "-------------------------------------------------------------------"
 
 mkdir Tools
 cd Tools
-wget https://github.com/projectdiscovery/subfinder/releases/download/v2.4.8/subfinder_2.4.8_linux_amd64.tar.gz
-tar -xzvf subfinder_2.4.8_linux_amd64.tar.gz
-sudo mv subfinder /usr/local/bin/
 
 cd ~
 mkdir Tools
