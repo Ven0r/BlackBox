@@ -21,7 +21,7 @@ for domain in "$@"; do
 	subfinder -d "$domain" -o "$subfinder_output"
 
 	# Run httpx on the subfinder output, append results to temp file
-	cat "$subfinder_output" | httpx --title --cname --sc --ct --location >>"$temp_httpx_output"
+	cat "$subfinder_output" | httpx -title -cname -sc -ct -method >>"$temp_httpx_output"
 done
 
 # Function to send notifications via Python script
