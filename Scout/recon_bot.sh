@@ -1,55 +1,31 @@
 #!/bin/bash
 
-# Define the file paths
-output_dir="./subfinder_outputs"
-httpx_output="alive_domains.txt"
-temp_httpx_output="temp_alive_domains.txt"
-new_domains_found="new_domains_found.txt"
+# Define file paths relative to the script location
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
+output_dir="$script_dir/subfinder_outputs"
+domains_file="$script_dir/domains.txt" # File to store the list of domains
+httpx_output="$script_dir/alive_domains.txt"
+temp_httpx_output="$script_dir/temp_alive_domains.txt"
 
-# Create a directory for subfinder outputs if it doesn't exist
+# Create output directory if it doesn't exist
 mkdir -p "$output_dir"
 
-# Empty the temp file for httpx results
->"$temp_httpx_output"
+# Create or clear the domains file
+>"$domains_file"
 
-# Loop through each domain provided as an argument
+# Write each domain provided as an argument to the domains file
 for domain in "$@"; do
-	echo "Processing domain: $domain"
-
-	# Run subfinder and output to a domain-specific file
-	subfinder_output="${output_dir}/${domain}_subfinder.txt"
-	subfinder -d "$domain" -o "$subfinder_output"
-
-	# Run httpx on the subfinder output, append results to temp file
-	cat "$subfinder_output" | httpx -title -cname -sc -ct -method >>"$temp_httpx_output"
+	echo "$domain" >>"$domains_file"
 done
 
-# Function to send notifications via Python script
-send_notification() {
-	local message_file="$1"
-	python3 discord_notifier.py "$(cat "$message_file")"
-}
+# Run subfinder using the domains file
+subfinder -dL "$domains_file" -o "$temp_httpx_output"
 
-# After running httpx and generating temp_alive_domains.txt or new_domains_found
-if [ ! -f "$httpx_output" ]; then
-	# First run, entire output is considered new
-	echo "First run, sending all domains to Discord..."
-	send_notification "$temp_httpx_output"
-	cp "$temp_httpx_output" "$httpx_output"
-else
-	# Find new domains by comparing current httpx output with the previous
-	grep -Fxvf "$httpx_output" "$temp_httpx_output" >"$new_domains_found"
+# Process the subfinder output with httpx
+cat "$temp_httpx_output" | httpx -title -cname -sc -ct -location >>"$httpx_output"
 
-	if [ -s "$new_domains_found" ]; then
-		echo "New domains found, sending to Discord..."
-		send_notification "$new_domains_found"
+# Call the Python script to send notifications, ensuring the correct file path is passed
+python3 "$script_dir/discord_notifier.py" "$httpx_output"
 
-		# Append new domains to alive_domains.txt
-		cat "$new_domains_found" >>"$httpx_output"
-	else
-		echo "No new domains found."
-	fi
-fi
-
-# Optional: Clean up temporary files
-rm -f "$temp_httpx_output" "$new_domains_found"
+# Optional: Clean up
+rm -f "$temp_httpx_output" "$domains_file"
