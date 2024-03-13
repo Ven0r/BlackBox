@@ -59,3 +59,28 @@ This can help find pages that are leaking error messages, which might disclose u
 # Next steps 
 1. Brute-force subdomains against list
 2. Screen capture nodupes_alive_domains.txt
+
+
+
+
+## Steps to automation:
+
+Set Target and make folder for Target
+
+create a .scope file that has wildcard and target domains.
+
+create condition on each line of the .scope file so if it's a wildcard domain it runs subdomain enumeration.
+
+once that is completed take all domains found from subdomain enumeration and already defined domain targets from scope into one file.
+
+Directory passive and active scanning on all domains.
+
+run httpx on all endpoints.
+
+filter results to then manually check links
+
+discord messages of all filtered results.
+
+get ips and run nmap agains endpoints? list ip's with port results?
+
+
