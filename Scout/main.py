@@ -1,5 +1,21 @@
 import subprocess
 import os
+import shutil
+
+def check_tools_installed():
+    tools = {
+        "subfinder": "https://github.com/projectdiscovery/subfinder#installation",
+        "amass": "https://github.com/OWASP/Amass#installation",
+        "httpx": "https://github.com/projectdiscovery/httpx#installation"
+    }
+    all_installed = True
+
+    for tool, install_url in tools.items():
+        if not shutil.which(tool):
+            print(f"{tool} is not installed. Please install it from: {install_url}")
+            all_installed = False
+
+    return all_installed
 
 def run_bash_script(scope_file_path, work_dir):
     bash_script_path = os.path.join(os.getcwd(), 'domain_enum.sh')
@@ -8,6 +24,9 @@ def run_bash_script(scope_file_path, work_dir):
     subprocess.run([bash_script_path, scope_file_path], cwd=work_dir)
 
 def main():
+    if not check_tools_installed():
+        return  # Exit the script if the required tools are not installed
+
     target = input("Who is the target? ")
     work_dir = os.path.join(os.getcwd(), target.replace(" ", "_"))
     os.makedirs(work_dir, exist_ok=True)
@@ -39,4 +58,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
