@@ -64,18 +64,19 @@ This can help find pages that are leaking error messages, which might disclose u
 
 
 ## Steps to automation:
+This needs to be stored and tracked inside a Postgres DB
 
 Set Target and make folder for Target
 
 create a .scope file that has wildcard and target domains.
 
-create condition on each line of the .scope file so if it's a wildcard domain it runs subdomain enumeration.
+create condition for each line of the .scope file so if it's a wildcard domain it runs subdomain enumeration with subfinder and amass then take the results remove dulicates and saved to a table.
 
 once that is completed take all domains found from subdomain enumeration and already defined domain targets from scope into one file.
 
-Directory passive and active scanning on all domains.
+Directory passive and active scanning on all domains with ffuf and a wordlist and waymore for passive.
 
-run httpx on all endpoints.
+spider with xnLinkfinder
 
 filter results to then manually check links
 
@@ -84,3 +85,4 @@ discord messages of all filtered results.
 get ips and run nmap agains endpoints? list ip's with port results?
 
 
+?run httpx on all endpoints.
