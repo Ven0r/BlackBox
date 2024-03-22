@@ -30,7 +30,7 @@ echo "Running Subfinder and Amass for the domains listed in enumerate_domains.tx
 
 # Run Subfinder and Amass using the filtered domains file
 subfinder -dL enumerate_domains.txt -o subfinder_subdomains.txt
-amass enum -df enumerate_domains.txt -o amass_subdomains.txt
+amass enum -norecursive -timeout 20 -df enumerate_domains.txt -o amass_subdomains.txt
 
 # Combine all the domains (subdomains from tools + direct domains) and remove duplicates
 cat subfinder_subdomains.txt amass_subdomains.txt direct_domains.txt | sort | uniq >combined_domains.txt
