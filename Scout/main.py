@@ -27,8 +27,15 @@ def main():
     if not check_tools_installed():
         return  # Exit the script if the required tools are not installed
 
+    # Check for the 'Targets' folder in the home directory
+    home_dir = os.path.expanduser('~')
+    targets_dir = os.path.join(home_dir, 'Targets')
+
+    # Create 'Targets' directory if it doesn't exist
+    os.makedirs(targets_dir, exist_ok=True)
+
     target = input("Who is the target? ")
-    work_dir = os.path.join(os.getcwd(), target.replace(" ", "_"))
+    work_dir = os.path.join(targets_dir, target.replace(" ", "_"))
     os.makedirs(work_dir, exist_ok=True)
 
     domain_list = input("Enter the list of domains to attack (separated by ';'): ")
@@ -58,5 +65,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 
